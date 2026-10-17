@@ -5,6 +5,76 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+// Defaults referenced by retained test module declarations.
+java_defaults {
+    name: "MotionTestDefaults",
+}
+
+java_defaults {
+    name: "tradefed_defaults",
+}
+
+java_defaults {
+    name: "tradefed_errorprone_defaults",
+}
+
+java_library_host {
+    name: "libandroid_build_v2beta1_java",
+    srcs: [],
+}
+
+java_library_host {
+    name: "libandroid_build_v3_java",
+    srcs: [],
+}
+
+java_library_host {
+    name: "libandroid_build_v4_java",
+    srcs: [],
+}
+
+java_library_host {
+    name: "test-composers",
+    srcs: [],
+}
+
+java_library_host {
+    name: "sts-host-util",
+    srcs: [],
+}
+
+java_library_host {
+    name: "codecdb-host-result-reporter",
+    srcs: [],
+}
+
+java_library {
+    name: "junitxml",
+    srcs: [],
+    sdk_version: "current",
+    host_supported: true,
+    installable: false,
+}
+
+python_library_host {
+    name: "platform-test-py-annotations",
+    srcs: [],
+}
+
+rust_defaults {
+    name: "rdroidtest.defaults",
+}
+
+cc_defaults {
+    name: "sts_defaults",
+}
+
+team {
+    name: "trendy_team_desktop_display",
+    trendy_team_id: "",
+}
+
+// Automotive and TV source placeholders mirror their original project paths.
 // Automotive and TV source placeholders below mirror their original project
 // paths under stubs/packages/ and stubs/frameworks/.
 apex {
@@ -13,18 +83,6 @@ apex {
     key: "com.android.virt.key",
     certificate: "platform",
     updatable: false,
-}
-
-python_library_host {
-    name: "libsdv_telemetry_proto_python",
-    srcs: ["src/stubs/sdv_telemetry_proto_stub.py"],
-    visibility: ["//visibility:public"],
-}
-
-python_library_host {
-    name: "libsdv_telemetry_simulator_proto_python",
-    srcs: ["src/stubs/sdv_telemetry_simulator_proto_stub.py"],
-    visibility: ["//visibility:public"],
 }
 
 android_library {
@@ -43,6 +101,25 @@ android_test {
     name: "CarDeveloperOptionsUnitTests",
     srcs: ["stubs/shared/ExcludedUiTestStub.java"],
     sdk_version: "current",
+}
+
+android_app {
+    name: "MyRoboApplication",
+    manifest: "stubs/shared/AndroidManifest.xml",
+    sdk_version: "current",
+    srcs: [],
+}
+
+android_app {
+    name: "MainlineModuleDetector",
+    manifest: "stubs/shared/AndroidManifest.xml",
+    sdk_version: "current",
+    srcs: [],
+}
+
+cc_test {
+    name: "IgtKmsAtomicTestCases",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
 }
 
 java_library {
@@ -133,7 +210,379 @@ java_library {
     is_stubs_module: true,
 }
 
+// These module origins are under platform_testing/libraries; source stubs are
+// arranged below stubs/platform_testing/ to match the removed project tree.
+// Build-graph placeholders for test libraries referenced by retained modules.
+// Source placeholders follow the platform_testing/libraries project paths.
+java_library {
+    name: "PlatformMotionTesting",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "PlatformMotionTestingCompose",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "PlatformMotionTestingComposeValues",
+    srcs: ["stubs/platform_testing/libraries/motion/compose/values/MotionTestValuesStub.kt"],
+    static_libs: ["androidx.compose.ui_ui"],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "ScreenshotComposeUtilsLib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "app-helpers-core",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "app-helpers-handheld-interfaces",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "collector-device-lib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "collector-device-lib-platform",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "collector-helper-utilities",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "commands-helper",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "common-platform-scenario-tests",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "common-platform-scenarios",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "compatibility-common-util-devicesidelib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "compatibility-common-util-lib",
+    srcs: [],
+    sdk_version: "current",
+    host_supported: true,
+    installable: false,
+}
+
+java_library {
+    name: "desktop-test-lib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "flag-junit",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "flag-junit-base",
+    srcs: [],
+    sdk_version: "current",
+    host_supported: true,
+    installable: false,
+}
+
+java_library_host {
+    name: "flag-junit-host",
+    srcs: [],
+}
+
+java_library {
+    name: "flickerlib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "flickerlib-apphelpers",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "flickerlib-helpers",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "flickerlib-parsers",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "handheld-app-helpers",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "health-testing-utils",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "launcher-helper-lib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "longevity-device-lib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "metrics-helper-lib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "microbenchmark-device-lib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "platform-parametric-runner-lib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "platform-parametric-runner-lib-no-robo",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "platform-screenshot-diff-core",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "platform-test-annotations",
+    srcs: [],
+    sdk_version: "current",
+    host_supported: true,
+    installable: false,
+}
+
+java_library_host {
+    name: "platform-test-annotations-host",
+    srcs: [],
+}
+
+java_library {
+    name: "platform-test-composers",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "platform-test-options",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "platform-test-rules",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "platform-test-rules-deviceless",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "perfetto-helper",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "statsd-helper",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "settings-helper",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "sts-device-util",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "systemui-helper",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "systemui-tapl",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "sysui-helper",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "timeresult-helper-lib",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "ui-trace-collector",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "uiautomator-helpers",
+    srcs: [],
+    sdk_version: "current",
+    installable: false,
+}
+
+cc_library_static {
+    name: "libflagtest",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+    stl: "none",
+    host_supported: true,
+}
+
+cc_binary_host {
+    name: "automotive_vsock_proxy",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "automotive_proxy_config",
+    srcs: ["Android.bp"],
+}
+
+filegroup {
+    name: "perf-setup",
+    srcs: ["Android.bp"],
+}
+
+sh_binary_host {
+    name: "test-utils-script",
+    src: "stubs/platform_testing/scripts/test-utils-script.sh",
+}
+
+filegroup {
+    name: "profile-proto-def",
+    srcs: ["Android.bp"],
+}
+
+filegroup {
+    name: "platform-test-screenshot-rules",
+    srcs: ["Android.bp"],
+}
+
 // These framework/API placeholders originate in packages/services/Car and packages/apps/Car.
+// The following framework/API placeholders originate in packages/services/Car
+// and packages/apps/Car; their source files are grouped under stubs/packages/.
 java_library {
     name: "android.car-test-stubs",
     srcs: ["stubs/packages/services/Car/car-lib/src/android/car/**/*.java"],
