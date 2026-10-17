@@ -1,0 +1,315 @@
+// SPDX-FileCopyrightText: The uwuAOSP Project
+// SPDX-License-Identifier: Apache-2.0
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+// Automotive and TV source placeholders below mirror their original project
+// paths under stubs/packages/ and stubs/frameworks/.
+apex {
+    name: "com.android.car.framework",
+    manifest: "stubs/packages/services/Car/apex_manifest.json",
+    key: "com.android.virt.key",
+    certificate: "platform",
+    updatable: false,
+}
+
+python_library_host {
+    name: "libsdv_telemetry_proto_python",
+    srcs: ["src/stubs/sdv_telemetry_proto_stub.py"],
+    visibility: ["//visibility:public"],
+}
+
+python_library_host {
+    name: "libsdv_telemetry_simulator_proto_python",
+    srcs: ["src/stubs/sdv_telemetry_simulator_proto_stub.py"],
+    visibility: ["//visibility:public"],
+}
+
+android_library {
+    name: "TvSettingsAPI",
+    srcs: ["stubs/packages/apps/TvSettings/SettingsAPI/TvSettingsApiStub.java"],
+    platform_apis: true,
+}
+
+android_test {
+    name: "TvSystemUITests",
+    srcs: ["stubs/shared/ExcludedUiTestStub.java"],
+    sdk_version: "current",
+}
+
+android_test {
+    name: "CarDeveloperOptionsUnitTests",
+    srcs: ["stubs/shared/ExcludedUiTestStub.java"],
+    sdk_version: "current",
+}
+
+java_library {
+    name: "android.car.builtin.impl",
+    srcs: ["stubs/packages/services/Car/car-builtin-lib/CarBuiltinStub.java"],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_sdk_library {
+    name: "com.android.libraries.tv.tvsystem",
+    srcs: ["stubs/frameworks/opt/tv/tvsystem/TvSystemStub.java"],
+    api_dir: "stubs/frameworks/opt/tv/tvsystem/api",
+    api_packages: ["org.uwuaosp.stub.tv"],
+    system_ext_specific: true,
+    no_dist: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    unsafe_ignore_missing_latest_api: true,
+}
+
+// Retained HAL and framework build files reference AAOS ownership metadata.
+team {
+    name: "trendy_team_aaos_audio_triage",
+    trendy_team_id: "5975525923586048",
+}
+
+team {
+    name: "trendy_team_aaos_carframework_triage",
+    trendy_team_id: "6733512354398208",
+}
+
+team {
+    name: "trendy_team_aaos_power_triage",
+    trendy_team_id: "5074705254285312",
+}
+
+team {
+    name: "trendy_team_aaos_performance_triage",
+    trendy_team_id: "5437379674734592",
+}
+
+team {
+    name: "trendy_team_aaos_storage_triage",
+    trendy_team_id: "6212485040668672",
+}
+
+team {
+    name: "trendy_team_aaos_window_triage",
+    trendy_team_id: "6079196098560000",
+}
+
+team {
+    name: "trendy_team_aaos_user_triage",
+    trendy_team_id: "5348353591836672",
+}
+
+team {
+    name: "trendy_team_aaos_input_triage",
+    trendy_team_id: "4635898947403776",
+}
+
+team {
+    name: "trendy_team_aaos_vac_triage",
+    trendy_team_id: "4860994675638272",
+}
+
+java_library {
+    name: "android.car",
+    srcs: ["stubs/packages/services/Car/car-lib/src/android/car/**/*.java"],
+    sdk_version: "current",
+}
+
+java_library {
+    name: "android.car-stubs",
+    srcs: ["stubs/packages/services/Car/car-lib/src/android/car/**/*.java"],
+    sdk_version: "current",
+    installable: false,
+    is_stubs_module: true,
+}
+
+java_library {
+    name: "android.car-system-stubs",
+    srcs: ["stubs/packages/services/Car/car-lib/src/android/car/**/*.java"],
+    sdk_version: "system_current",
+    installable: false,
+    is_stubs_module: true,
+}
+
+// These framework/API placeholders originate in packages/services/Car and packages/apps/Car.
+java_library {
+    name: "android.car-test-stubs",
+    srcs: ["stubs/packages/services/Car/car-lib/src/android/car/**/*.java"],
+    sdk_version: "test_current",
+    installable: false,
+    is_stubs_module: true,
+}
+
+droidstubs {
+    name: "android.car-stubs-docs",
+    srcs: ["stubs/packages/services/Car/car-lib/src/android/car/**/*.java"],
+    libs: ["framework"],
+    api_filename: "current.txt",
+    removed_api_filename: "removed.txt",
+    flags: ["--stub-packages android.car*"],
+    installable: false,
+}
+
+droidstubs {
+    name: "android.car-system-stubs-docs",
+    srcs: ["stubs/packages/services/Car/car-lib/src/android/car/**/*.java"],
+    libs: ["framework"],
+    api_filename: "system-current.txt",
+    removed_api_filename: "system-removed.txt",
+    flags: [
+        "--stub-packages android.car*",
+        "--show-annotation android.annotation.SystemApi",
+    ],
+    installable: false,
+}
+
+filegroup {
+    name: "car-api-current.txt",
+    srcs: ["stubs/packages/services/Car/car-lib/api/current.txt"],
+}
+
+filegroup {
+    name: "car-api-system-current.txt",
+    srcs: ["stubs/packages/services/Car/car-lib/api/system-current.txt"],
+}
+
+filegroup {
+    name: "car-api-system-removed.txt",
+    srcs: ["stubs/packages/services/Car/car-lib/api/system-removed.txt"],
+}
+
+filegroup {
+    name: "car-service-dump-proto-srcs",
+    srcs: [],
+}
+
+filegroup {
+    name: "CarSvcProps_JSON",
+    srcs: [],
+}
+
+filegroup {
+    name: "cartelemetryservice-proto-srcs",
+    srcs: [],
+}
+
+filegroup {
+    name: "rotary-service-proto-source",
+    srcs: [],
+}
+
+filegroup {
+    name: "native-dump-proto-srcs",
+    srcs: [],
+}
+
+java_defaults {
+    name: "car-framework-aconfig-libraries",
+}
+
+java_library {
+    name: "android.car.builtin.stubs.module_lib",
+    srcs: ["stubs/packages/services/Car/car-builtin-lib/CarBuiltinStub.java"],
+    sdk_version: "module_current",
+    installable: false,
+}
+
+java_library {
+    name: "android.car.feature-aconfig-java",
+    srcs: ["stubs/packages/services/Car/aconfig/CarFeatureStub.java"],
+    sdk_version: "module_current",
+    installable: false,
+}
+
+java_library {
+    name: "android.car.feature-aconfig-java-host",
+    srcs: ["stubs/packages/services/Car/aconfig/CarFeatureHostStub.java"],
+    sdk_version: "current",
+    installable: false,
+    host_supported: true,
+}
+
+java_library {
+    name: "android.car.test.utils",
+    srcs: ["stubs/packages/services/Car/libs/car-test-lib/CarTestUtilsStub.java"],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "android.car.testapi",
+    srcs: ["stubs/packages/services/Car/libs/car-test-lib/CarTestApiStub.java"],
+    sdk_version: "current",
+    installable: false,
+}
+
+java_library {
+    name: "com_android_car_settings_flags_lib",
+    srcs: ["stubs/packages/apps/Car/Settings/aconfig/CarSettingsFlagsStub.java"],
+    sdk_version: "current",
+    installable: false,
+}
+
+test_suite_package {
+    name: "automotive-tests",
+}
+
+test_suite_package {
+    name: "automotive-general-tests",
+}
+
+cc_defaults {
+    name: "android-automotive-large-parcelable-defaults",
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}
+
+cc_library {
+    name: "android-automotive-large-parcelable-lib",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+    defaults: ["android-automotive-large-parcelable-defaults"],
+    vendor_available: true,
+    host_supported: true,
+}
+
+cc_defaults {
+    name: "powerpolicyclient_defaults",
+}
+
+cc_library {
+    name: "libpowerpolicyclient",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+    vendor_available: true,
+    system_ext_specific: true,
+}
+
+cc_defaults {
+    name: "vhalclient_defaults",
+}
+
+cc_library {
+    name: "libvhalclient",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+    vendor_available: true,
+}
+
+cc_defaults {
+    name: "carwatchdogd_defaults",
+}
+
+cc_defaults {
+    name: "libwatchdog_perf_service_defaults",
+}
+
+cc_library {
+    name: "libwatchdog_perf_service",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+    vendor_available: true,
+}
+
+cc_library {
+    name: "android.automotive.watchdog-V2-ndk",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+    vendor_available: true,
+}
