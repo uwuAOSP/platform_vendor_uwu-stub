@@ -1,0 +1,5 @@
+<!--
+  SPDX-FileCopyrightText: The uwuAOSP Project
+  SPDX-License-Identifier: Apache-2.0
+-->
+CTS CameraITS source unavailable: graph-only placeholder.

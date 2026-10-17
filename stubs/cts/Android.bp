@@ -1,0 +1,726 @@
+/*
+ * SPDX-FileCopyrightText: The uwuAOSP Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+// Source project: platform/cts (checkout path: cts/).
+// Minimal graph-only declarations for retained modules that reference CTS.
+// These placeholders do not provide CTS test implementations.
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+filegroup {
+    name: "ui_interaction_utils_src_as_txt",
+    srcs: ["ui_interaction_utils_src_as_txt.txt"],
+}
+
+java_defaults {
+    name: "uwu_cts_graph_java_defaults",
+    sdk_version: "current",
+    installable: false,
+}
+
+java_defaults {
+    name: "cts_defaults",
+}
+
+java_defaults {
+    name: "cts_error_prone_rules",
+}
+
+java_defaults {
+    name: "cts_support_defaults",
+}
+
+java_defaults {
+    name: "mts-target-sdk-version-current",
+}
+
+java_library_host {
+    name: "vogarexpectlib",
+    srcs: [],
+}
+
+java_library {
+    name: "ActivityContext",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsAccessibilityCommon",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsAppSearchTestUtils",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsNetTestsNonUpdatableLib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsPhotoPickerTestLib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsSecurityBulletinHostTestCases",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsSurfaceValidatorLib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsTelecomCujTestLib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsTelecomTestCases2Lib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsTelecomTestCases3Lib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsTelecomTestLib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsVirtualDeviceCommonLib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "Interactive",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "MediaPerformanceClassCommon",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "Nene",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "TestApp",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "android.telephony.mockmodem",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "bedstead",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "bedstead-enterprise",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "bedstead-flags",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "bedstead-multiuser",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "compatibility-device-preconditions",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "compatibility-device-util-axt",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "compatibility-device-util-axt-minus-dexmaker",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "compatibility-device-util-axt-ravenwood",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "compatibility-host-util-axt",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-companion-common",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-companion-uicommon",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-core-test-runner-axt",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-dalvik-device-test-runner",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-dalvik-host-test-runner",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-host-utils",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-input-lib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-install-lib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-install-lib-host",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-install-lib-java",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-keystore-test-util",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-mediaprojection-common",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-rollback-lib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-shim-host-lib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-statsd-atom-host-test-utils",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-tradefed",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-tradefed-harness",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts-wm-util",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts_app_test_shared_lib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts_window-extensions",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts_window-sidecar",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "cts_window_jetpack_utils",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "ctstestrunner-axt",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "ctstestserver",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "device-time-shell-utils",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "json",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+    srcs: ["json/src/**/*.java"],
+    static_libs: ["gson"],
+}
+
+java_library {
+    name: "jsonlib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+    srcs: ["json/src/**/*.java"],
+    static_libs: ["gson"],
+}
+
+java_library {
+    name: "mediapc-requirements",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "nativetesthelper",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "print-test-util-lib",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "suite-loading-tests",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "telephony-cts-utils",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+android_app {
+    name: "Api29InCallServiceTestApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CallRedirectionServiceTestApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CallRedirectionServiceTestApp2",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CallScreeningServiceTestApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CallStreamingServiceTestApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CarModeTestApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CarModeTestAppSelfManaged",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CarModeTestAppTwo",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "ConnectionServiceVoipAppClone",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "ConnectionServiceVoipAppMain",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsAppTestStubs",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsDefaultNotesApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsHardwareTestCases",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsInputTestCases",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsMediaProjectionTestCasesHelperApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsSecurityTestCases",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsStaticSharedLibConsumerApp1",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsStaticSharedLibConsumerApp3",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsStaticSharedLibProviderApp1",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsViewTestCases",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsWidgetTestCases",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "CtsWindowManagerDeviceWindow",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "HelloWorldSdk1",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "HelloWorldUsingSdk1And2",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "HelloWorldUsingSdk1AndSdk1",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "HelloWorldUsingSdkMalformedNegativeVersion",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "ManagedConnectionServiceApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "ManagedConnectionServiceAppClone",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "NonUiInCallServiceWoExport",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "SelfManagedCSTestAppOne",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "ThirdPartyCallIntentTestApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "ThirdPtyDialerTestApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "ThirdPtyDialerTestAppTwo",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "ThirdPtyInCallServiceTestApp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "TransactionalVoipAppClone",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "TransactionalVoipAppMain",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+android_app {
+    name: "com.android.cts.helpers.aosp",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+}
+
+filegroup {
+    name: "StagedInstallTestApexV2",
+    srcs: ["AndroidManifest.xml"],
+}
+
+filegroup {
+    name: "StagedInstallTestApexV2_WrongSha",
+    srcs: ["AndroidManifest.xml"],
+}
+
+filegroup {
+    name: "cts-telecom3-test-manifest",
+    srcs: ["AndroidManifest.xml"],
+}
+
+filegroup {
+    name: "cts-telecom-test-manifest",
+    srcs: ["AndroidManifest.xml"],
+}
+
+filegroup {
+    name: "cts-telecom2-test-manifest",
+    srcs: ["AndroidManifest.xml"],
+}
+
+filegroup {
+    name: "cts-telecom-cuj-test-manifest",
+    srcs: ["AndroidManifest.xml"],
+}
+
+android_app {
+    name: "TestAppAv1",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+    apex_available: ["com.android.apex.apkrollback.test_v1"],
+}
+
+android_app {
+    name: "TestAppAv2",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+    apex_available: ["com.android.apex.apkrollback.test_v2"],
+}
+
+android_app {
+    name: "TestAppACrashingV2",
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+    apex_available: ["com.android.apex.apkrollback.test_v2Crashing"],
+}
+
+android_app_certificate {
+    name: "cts-testkey1",
+    certificate: "testkey",
+}
+
+android_app_certificate {
+    name: "cts-testkey2",
+    certificate: "testkey",
+}
+
+java_library {
+    name: "CtsMediaProviderTestUtils",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+java_library {
+    name: "CtsHostsideTestsAppSecurityUtil",
+    defaults: ["uwu_cts_graph_java_defaults"],
+    host_supported: true,
+}
+
+cc_test {
+    name: "Bug-115739809",
+    srcs: ["CtsNativeStub.cpp"],
+    host_supported: true,
+}
+
+cc_library {
+    name: "libdynamic_instrumentation_manager_test_jni",
+    srcs: ["CtsNativeStub.cpp"],
+    host_supported: true,
+    sdk_version: "current",
+    stl: "none",
+}
+
+cc_library_static {
+    name: "libnativetesthelper_jni",
+    srcs: ["CtsNativeStub.cpp"],
+    host_supported: true,
+    sdk_version: "current",
+    stl: "none",
+}
+
+cc_library_shared {
+    name: "libcts_jni",
+    srcs: ["CtsNativeStub.cpp"],
+    host_supported: true,
+    sdk_version: "current",
+    stl: "none",
+}
+
+rust_library {
+    name: "libcts_flags_tests_rust",
+    crate_name: "cts_flags_tests_rust",
+    srcs: ["CtsRustStub.rs"],
+}
