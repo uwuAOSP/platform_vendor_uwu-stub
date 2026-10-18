@@ -5,6 +5,9 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+// Compatibility module declarations are kept here for global Soong lookup.
+// Source-backed placeholders are organized below stubs/ by their original
+// checkout paths; modules with no source are graph-only declarations.
 // Defaults referenced by retained test module declarations.
 java_defaults {
     name: "MotionTestDefaults",
@@ -74,7 +77,6 @@ team {
     trendy_team_id: "",
 }
 
-// Automotive and TV source placeholders mirror their original project paths.
 // Automotive and TV source placeholders below mirror their original project
 // paths under stubs/packages/ and stubs/frameworks/.
 apex {
@@ -213,7 +215,6 @@ java_library {
 // These module origins are under platform_testing/libraries; source stubs are
 // arranged below stubs/platform_testing/ to match the removed project tree.
 // Build-graph placeholders for test libraries referenced by retained modules.
-// Source placeholders follow the platform_testing/libraries project paths.
 java_library {
     name: "PlatformMotionTesting",
     srcs: [],
@@ -580,7 +581,6 @@ filegroup {
     srcs: ["Android.bp"],
 }
 
-// These framework/API placeholders originate in packages/services/Car and packages/apps/Car.
 // The following framework/API placeholders originate in packages/services/Car
 // and packages/apps/Car; their source files are grouped under stubs/packages/.
 java_library {

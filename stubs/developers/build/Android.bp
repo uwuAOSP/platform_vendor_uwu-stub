@@ -1,0 +1,19 @@
+//
+// SPDX-FileCopyrightText: The uwuAOSP Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+// Replaces sdk_repo_sample_new_zip from developers/build/Android.bp.
+// Its consumer in development/build/Android.bp packages SDK samples; this
+// empty archive keeps device builds graph-compatible without those samples.
+genrule {
+    name: "sdk_repo_sample_new_zip",
+    tools: ["soong_zip"],
+    out: ["sdk_repo_sample_new.zip"],
+    cmd: "mkdir -p $(genDir)/empty && " +
+        "$(location soong_zip) -o $(out) -C $(genDir)/empty -D $(genDir)/empty",
+}
