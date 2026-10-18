@@ -5,6 +5,17 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+apex_key {
+    name: "com.google.cf.apex.key",
+    public_key: "stubs/cts/testkey.x509.pem",
+    private_key: "stubs/cts/testkey.x509.pem",
+}
+
+android_app_certificate {
+    name: "com.google.cf.apex.certificate",
+    certificate: "stubs/cts/testkey",
+}
+
 // Compatibility module declarations are kept here for global Soong lookup.
 // Source-backed placeholders are organized below stubs/ by their original
 // checkout paths; modules with no source are graph-only declarations.
@@ -90,17 +101,20 @@ apex {
 android_library {
     name: "TvSettingsAPI",
     srcs: ["stubs/packages/apps/TvSettings/SettingsAPI/TvSettingsApiStub.java"],
+    manifest: "stubs/shared/AndroidManifest.xml",
     platform_apis: true,
 }
 
 android_test {
     name: "TvSystemUITests",
+    manifest: "stubs/shared/AndroidManifest.xml",
     srcs: ["stubs/shared/ExcludedUiTestStub.java"],
     sdk_version: "current",
 }
 
 android_test {
     name: "CarDeveloperOptionsUnitTests",
+    manifest: "stubs/shared/AndroidManifest.xml",
     srcs: ["stubs/shared/ExcludedUiTestStub.java"],
     sdk_version: "current",
 }
@@ -551,9 +565,120 @@ cc_library_static {
     host_supported: true,
 }
 
+// Trusty storage is opt-in, but system/core references this module globally.
+// Keep a graph-only placeholder so default Soong analysis can resolve it.
+cc_library_static {
+    name: "libtrustystorageinterface",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+    host_supported: true,
+}
+
+cc_library_static {
+    name: "libtrustycliinterface",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "trusty_test_vm_unsigned",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "trusty_test_vm_os_unsigned",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "desktop_trusty_kernel_digest",
+    srcs: ["stubs/cts/CtsRustStub.rs"],
+}
+
+filegroup {
+    name: "desktop_trusty_ext_boot_kernel_digest",
+    srcs: ["stubs/cts/CtsRustStub.rs"],
+}
+
+filegroup {
+    name: "microdroid_gki_modules-android15-6.6-arm64",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "microdroid_gki_modules-android15-6.6-x86_64",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "microdroid_gki_modules-android16-6.12-arm64",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "microdroid_gki_modules-android16-6.12-x86_64",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "microdroid_gki_kernel_prebuilts-android16-6.12-arm64",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "microdroid_gki_kernel_prebuilts-android16-6.12-x86_64",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "microdroid_gki_kernel_prebuilts-android15-6.6-arm64",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+filegroup {
+    name: "microdroid_gki_kernel_prebuilts-android15-6.6-x86_64",
+    srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+rust_library {
+    name: "android.trusty.provisioning-rust",
+    crate_name: "trusty_provisioning_stub",
+    stem: "libtrusty_provisioning_stub",
+    srcs: ["stubs/cts/CtsRustStub.rs"],
+}
+
+rust_library {
+    name: "android.trusty.commservice-rust",
+    crate_name: "trusty_commservice_stub",
+    stem: "libtrusty_commservice_stub",
+    srcs: ["stubs/cts/CtsRustStub.rs"],
+}
+
+rust_library {
+    name: "android.trusty.vm_attestation-rust",
+    crate_name: "trusty_vm_attestation_stub",
+    stem: "libtrusty_vm_attestation_stub",
+    srcs: ["stubs/cts/CtsRustStub.rs"],
+}
+
+rust_library {
+    name: "libhwcryptohal_common",
+    crate_name: "hwcryptohal_common",
+    srcs: ["stubs/cts/CtsRustStub.rs"],
+}
+
+rust_library {
+    name: "libhwcrypto_thal",
+    crate_name: "hwcrypto_thal",
+    srcs: ["stubs/cts/CtsRustStub.rs"],
+}
+
 cc_binary_host {
     name: "automotive_vsock_proxy",
     srcs: ["stubs/shared/AutomotiveStub.cpp"],
+}
+
+sh_binary_host {
+    name: "append_squashfs_overlay",
+    src: "stubs/platform_testing/scripts/test-utils-script.sh",
 }
 
 filegroup {
