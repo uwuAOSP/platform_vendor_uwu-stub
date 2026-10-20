@@ -686,9 +686,12 @@ filegroup {
     srcs: ["Android.bp"],
 }
 
-filegroup {
+sh_test {
     name: "perf-setup",
-    srcs: ["Android.bp"],
+    src: "stubs/platform_testing/scripts/perf-setup/empty-setup.sh",
+    filename: "perf-setup.sh",
+    test_suites: ["device-tests", "device-pixel-tests"],
+    auto_gen_config: false,
 }
 
 sh_binary_host {
