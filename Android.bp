@@ -676,13 +676,6 @@ rust_library {
 }
 
 rust_library {
-    name: "android.trusty.vm_attestation-rust",
-    crate_name: "trusty_vm_attestation_stub",
-    stem: "libtrusty_vm_attestation_stub",
-    srcs: ["stubs/cts/CtsRustStub.rs"],
-}
-
-rust_library {
     name: "libhwcryptohal_common",
     crate_name: "hwcryptohal_common",
     srcs: ["stubs/cts/CtsRustStub.rs"],

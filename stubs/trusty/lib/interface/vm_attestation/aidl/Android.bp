@@ -1,0 +1,23 @@
+// SPDX-FileCopyrightText: The uwuAOSP Project
+// SPDX-License-Identifier: Apache-2.0
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+// Source: trusty/lib, android-17.0.0_r1
+// Commit: 165d46c463bd22524a7d33d177bf7f35dad46bf5
+aidl_interface {
+    name: "android.trusty.vm_attestation",
+    srcs: ["android/trusty/vm_attestation/*.aidl"],
+    unstable: true,
+    backend: {
+        rust: {
+            enabled: true,
+            apex_available: [
+                "//apex_available:anyapex",
+                "//apex_available:platform",
+            ],
+        },
+    },
+}
