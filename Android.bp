@@ -5,6 +5,29 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+license {
+    name: "uwu_stub_crosvm_bootloader_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["SPDX-license-identifier-GPL-2.0-only"],
+    license_text: ["stubs/device/google/cuttlefish_prebuilts/bootloader/LICENSE"],
+}
+
+// These binaries are pinned to device/google/cuttlefish_prebuilts at
+// android-17.0.0_r1 (commit cfd3167940f78ae4b6696a1f85cef2464a43b1a1).
+prebuilt_etc {
+    name: "android_bootloader_crosvm_aarch64",
+    filename: "u-boot.bin",
+    src: "stubs/device/google/cuttlefish_prebuilts/bootloader/crosvm_aarch64/u-boot.bin",
+    licenses: ["uwu_stub_crosvm_bootloader_license"],
+}
+
+prebuilt_etc {
+    name: "android_bootloader_crosvm_x86_64",
+    filename: "u-boot.rom",
+    src: "stubs/device/google/cuttlefish_prebuilts/bootloader/crosvm_x86_64/u-boot.rom",
+    licenses: ["uwu_stub_crosvm_bootloader_license"],
+}
+
 apex_key {
     name: "com.google.cf.apex.key",
     public_key: "stubs/cts/testkey.x509.pem",
